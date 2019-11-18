@@ -1,9 +1,26 @@
 .header{
     text-align: center;
-    color: orangered;
-    border: 5px, soloid rgb(171, 171, 238);
+    color: rgb(0, 4, 255);
+    border: 5px, soloid rgb(192, 192, 218);
 }
-
+body 
+{
+    background-color:rgb(225, 228, 230);
+    /*
+    background-color:rgb(0,0,0);
+    background-image:url("/img/green_granite.jpg");
+    background-position:top left;
+    background-repeat:repeat;
+    background-attachment:fixed;
+    */
+    /*
+    background-color:rgb(0,0,0);
+    background-image:url("/img/big stone.jpg");
+    background-position:top left;
+    background-size: 100%;
+    background-attachment:fixed;
+    */
+}
 img{
     float: left;
     width: 20%;
@@ -12,13 +29,19 @@ img{
 }
 
 .news_block{
-    background-image: url("/img/marble.jpg");
-    background-size: 100%;
+    background-color:rgb(0,0,0);
+    background-position:top left;
+    background-repeat:repeat;
+    background-attachment:fixed;
+    background-image: url("/img/marble2.jpg");
     border: 10px outset silver;
+    border-radius: 10px;
     width: 50%;
     position: fixed;
     right: 25%;
     left: 25%;
+    height: 80%;
+    overflow: auto;
 }
 hr {
     clear: both;
@@ -33,10 +56,45 @@ news{
 img.meme{
     position: absolute;
     right: 20px;
-    width: 400px;
+    width: 30%;
 }
 .read_more
 {   
+    padding: 100px;
+    border-radius: 25px;
     border: 1px solid gray;
     padding: 10px;
+}
+::-webkit-scrollbar {
+    width: 20px;
+    height: 90%;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+    height: 90%;
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-image: url("/img/monochrome_granite.jpg"); 
+    border-radius: 10px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-image: url("/img/green_granite.jpg");
+}
+
+.article
+{
+    width: 65%;
+    padding-left: 10px;;
+}
+
+.part1
+{
+    float: left;
 }

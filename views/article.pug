@@ -4,10 +4,12 @@ block header
 
 block content
     div.news
-        img.main_img(src=`/img/${one_news.imgSrc}`)
-        h1 #{one_news.title}
-        h3 About
-        p #{one_news.about}
-        h3 Origin
-        p #{one_news.origin}
+        div.part1
+            img.main_img(src=`/img/${one_news.imgSrc}`)
+            div.article
+                h1 #{one_news.title}
+                h3 About
+                p #{one_news.about}
+                h3 Origin
+                p #{one_news.origin}
         img.meme(src=`/img/${one_news.memeImage}`)
