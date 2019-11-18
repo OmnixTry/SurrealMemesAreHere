@@ -1,0 +1,28 @@
+{
+    "news_list": [
+        {
+            "id": "0",
+            "imgSrc": "1.png",
+            "title": "Meme Man Breaks all the charts!XDXD",
+            "memeImage": "stonks.png",
+            "about": "Meme Man refers to a poorly made 3D head which functions as the mascot of the Facebook page Special meme fresh. The head is frequently used in absurd edits, surreal memes and shitposting.",
+            "origin": "According to Special meme fresh's post on Know Your Meme,[1] the 3D model of the head originates from a wonky attempt at a human head posted on 4chan’s 3DCG board long ago. The image was later adapted to be their profile mascot, first appearing in their profile photo on April 9th."
+        },
+        {
+            "id": "1",
+            "imgSrc": "2.png",
+            "title": "Orang - the most untrustworthy creature in the universe!*mischievous*",
+            "memeImage": "stonks.png",
+            "about": "Meme Man refers to a poorly made 3D head which functions as the mascot of the Facebook page Special meme fresh. The head is frequently used in absurd edits, surreal memes and shitposting.",
+            "origin": "According to Special meme fresh's post on Know Your Meme,[1] the 3D model of the head originates from a wonky attempt at a human head posted on 4chan’s 3DCG board long ago. The image was later adapted to be their profile mascot, first appearing in their profile photo on April 9th."
+        },
+        {
+            "id": "2",
+            "imgSrc": "h.jpg",
+            "title": "Lettet H. Is there something funnier?",
+            "memeImage": "stonks.png",
+            "about": "Meme Man refers to a poorly made 3D head which functions as the mascot of the Facebook page Special meme fresh. The head is frequently used in absurd edits, surreal memes and shitposting.",
+            "origin": "According to Special meme fresh's post on Know Your Meme,[1] the 3D model of the head originates from a wonky attempt at a human head posted on 4chan’s 3DCG board long ago. The image was later adapted to be their profile mascot, first appearing in their profile photo on April 9th."
+        }
+    ]
+}

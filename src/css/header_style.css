@@ -1,0 +1,35 @@
+.header{
+    text-align: center;
+    color: orangered;
+    border: 5px, soloid rgb(171, 171, 238);
+}
+
+img{
+    float: left;
+    width: 20%;
+    border: 6px groove lightblue;
+    margin: 10px;
+}
+
+.news_block{
+    border: 10px outset olivedrab;
+    width: 50%;
+    position: fixed;
+    right: 25%;
+    left: 25%;
+}
+hr {
+    clear: both;
+    width: 99%;
+    margin-left: 0.35%;
+}
+news{
+    display:inline-block;
+    overflow: hidden;
+    clear: both;
+}
+img.meme{
+    position: absolute;
+    right: 20px;
+    width: 400px;
+}

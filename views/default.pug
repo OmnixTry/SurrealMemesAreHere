@@ -1,0 +1,11 @@
+doctype html
+html
+    head
+        title #{title}
+        link(rel="stylesheet", href="/css/header_style.css")
+    body
+        main
+            block header
+                header.header
+                    h1 #{title}
+            block content

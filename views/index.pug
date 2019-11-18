@@ -1,0 +1,12 @@
+extends default
+
+block content
+    div.container
+        div.news_block
+            each news in news_list
+                div.news
+                    img(src=`/img/${news.imgSrc}`)
+                    h2.title
+                        | #{news.title}
+                    a.read_more(href=`/article?id=${news.id}`) Read More
+                hr
