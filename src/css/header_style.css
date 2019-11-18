@@ -7,12 +7,14 @@
 img{
     float: left;
     width: 20%;
-    border: 6px groove lightblue;
+    border: 6px inset silver;
     margin: 10px;
 }
 
 .news_block{
-    border: 10px outset olivedrab;
+    background-image: url("/img/marble.jpg");
+    background-size: 100%;
+    border: 10px outset silver;
     width: 50%;
     position: fixed;
     right: 25%;
@@ -32,4 +34,9 @@ img.meme{
     position: absolute;
     right: 20px;
     width: 400px;
+}
+.read_more
+{   
+    border: 1px solid gray;
+    padding: 10px;
 }
