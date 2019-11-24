@@ -1,29 +1,31 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3000
 const news = require('./news_list.json')
+const path = require('path')
 
-app.set('view engine', 'pug');
+app.set('view engine', 'pug')
 
-app.use(express.static(__dirname + '/src'));
+app.use(express.static(path.join(__dirname, 'src')))
 
-
-app.get('/', (req, res) =>{
-    res.render('index', {
-        title: 'Homepage',
-        news_list: news.news_list
-    });
-});
+app.get('/', (req, res) => {
+  res.render('index', {
+    title: 'Homepage',
+    news_list: news.news_list
+  })
+})
 
 app.get('/article', (req, res) => {
-    const one_news = news.news_list.find(p => p.id === req.query.id);
-    
-    res.render('article', {
-    title: `About ${one_news.firstname} ${one_news.lastname}`,
-    one_news,
-    });
-});
+  const oneNews = news.news_list.find((p) => p.id === req.query.id)
+
+  res.render('article', {
+    title: `About ${oneNews.firstname} ${oneNews.lastname}`,
+    oneNews
+  })
+})
 
 const server = app.listen(port, () => {
-    console.log(`Express is running -> PORT ${port}`);
-});
+  console.log(`Express is running -> PORT ${port}`)
+})
+
+server()
