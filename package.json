@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"testing\"",
     "prettier": "prettier --config .prettierrc.json --write *.js",
     "lint": "eslint . --fix",
     "doc": "esdoc --out docs/src/ --readme ./README.md",

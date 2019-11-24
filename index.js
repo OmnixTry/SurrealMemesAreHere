@@ -27,5 +27,3 @@ app.get('/article', (req, res) => {
 const server = app.listen(port, () => {
   console.log(`Express is running -> PORT ${port}`)
 })
-
-var serv = server
