@@ -6,3 +6,8 @@ script:
  - npm run test
 notifications:
  email: false
+deploy:
+  provider: heroku
+  api_key: acfbfb9a-1ac4-4a57-93c7-772757df4711
+  app: surreal-news
+
