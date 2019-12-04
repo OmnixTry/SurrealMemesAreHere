@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Регистрация</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Введите данные</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label>Title</label><br>
+        <input type="text" name="title" /><br><br>
+        <label>about</label><br>
+        <textarea cols="30" rows="7" name="about"></textarea><br><br>
+        <label>origin</label><br>
+        <textarea cols="30" rows="7" name="origin"></textarea><br><br>
+        <label>Main Image</label>
+        <input type="file" name="Image" id=""><br><br>
+        <label>Meme Image</label>
+        <input type="file" name="Image" id=""><br><br>
+        <input type="submit" value="Отправить" />
+    </form>
+</body>
+</html>
