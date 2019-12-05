@@ -159,11 +159,11 @@ mongoClient.connect(function (err, client) {
 
 app.get('/', (req, res) => {
   mongoClient.connect((err, client) => {
-    if(err) return console.log(err)
+    if (err) return console.log(err)
     const db = client.db('news')
     const collection = db.collection('articles')
     collection.find().toArray((err, news) => {
-      if(err) return console.log(err)
+      if (err) return console.log(err)
       res.render('index', {
         title: 'Homepage',
         news_list: news
