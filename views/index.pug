@@ -5,8 +5,8 @@ block content
         div.news_block
             each news in news_list
                 div.news
-                    img(src=`/img/${news.imgSrc}`)
+                    img(src=`data:image/jpg;base64, ${news.imgSrc}`)
                     h2.title
                         | #{news.title}
-                    a.read_more(href=`/article?id=${news.id}`) Read More
+                    a.read_more(href=`/article?id=${news.title}`) Read More
                 hr

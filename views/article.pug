@@ -4,12 +4,12 @@ block header
 
 block content
     div.news
+        img.main_img(src=`data:image/jpg;base64, ${oneNews.imgSrc}`)
         div.part1
-            img.main_img(src=`/img/${oneNews.imgSrc}`)
             div.article
                 h1 #{oneNews.title}
                 h3 About
                 p #{oneNews.about}
                 h3 Origin
                 p #{oneNews.origin}
-        img.meme(src=`/img/${oneNews.memeImage}`)
+    img.meme(src=`data:image/jpg;base64, ${oneNews.memeImage}`)

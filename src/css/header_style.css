@@ -48,10 +48,12 @@ hr {
     width: 99%;
     margin-left: 0.35%;
 }
-news{
+.news{
     display:inline-block;
     overflow: hidden;
     clear: both;
+    width: 100%;    
+    word-break: break-all;
 }
 img.meme{
     position: absolute;
@@ -89,7 +91,8 @@ img.meme{
 }
 
 .article
-{
+{   
+    position: relative;
     width: 65%;
     padding-left: 10px;;
 }

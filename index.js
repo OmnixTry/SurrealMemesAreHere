@@ -1,10 +1,21 @@
 const express = require('express')
 const app = express()
+var fs = require('fs')
 const port = process.env.PORT || 3000
-const news = require('./news_list.json')
+// const news = require('./news_list.json')
 const path = require('path')
 const MongoClient = require('mongodb').MongoClient
-const url = 'mongodb://localhost:27017/'
+// const url = 'mongodb://localhost:27017/'
+
+//
+// connecting to database on the cloud
+//
+const uri =
+    'mongodb+srv://omnixTry:omnixTry@cluster0-kwws1.mongodb.net/test?retryWrites=true&w=majority'
+const mongoClient = new MongoClient(uri, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+})
 
 const multer = require('multer')
 const upload = multer({ dest: 'src/img/' })
@@ -15,10 +26,6 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.set('view engine', 'pug')
 
 app.use(express.static(path.join(__dirname, 'src')))
-
-const mongoClient = new MongoClient(url, {
-  useNewUrlParser: true
-})
 
 //
 // Adding Page Responses
@@ -33,12 +40,42 @@ app.post('/upload', upload.array('Image', 2), function (
   next
 ) {
   if (!request.body) return response.sendStatus(400)
-  console.log(request.body)
+  // console.log(request.body)
 
   const filedata1 = request.files[0]
   const filedata2 = request.files[1]
+  const binary1 = fs.readFileSync(filedata1.path).toString('base64')
+  const binary2 = fs.readFileSync(filedata2.path).toString('base64')
 
-  console.log(filedata1)
+  // new Buffer(binary1).toString('base64')
+
+  // console.log(filedata1)
+
+  const OneArticle = {
+    imgSrc: `${binary1}`,
+    title: `${request.body.title}`,
+    memeImage: `${binary2}`,
+    about: `${request.body.about}`,
+    origin: `${request.body.origin}`
+  }
+
+  mongoClient.connect(function (err, client) {
+    if (err) {
+      return console.log(err)
+    }
+    // console.log('connected to MongoDB: port = 27017')
+    const db = client.db('news')
+    const collection = db.collection('articles')
+
+    collection.insertOne(OneArticle, (err, result) => {
+      if (err) {
+        return console.log(err)
+      }
+      // console.log(result.ops)
+      client.close()
+    })
+  })
+  // console.log(filedata1)
   if (!filedata1) response.send('Ошибка при загрузке файла')
   else response.send('Файл загружен')
 })
@@ -121,9 +158,17 @@ mongoClient.connect(function (err, client) {
 */
 
 app.get('/', (req, res) => {
-  res.render('index', {
-    title: 'Homepage',
-    news_list: news.news_list
+  mongoClient.connect((err, client) => {
+    if(err) return console.log(err)
+    const db = client.db('news')
+    const collection = db.collection('articles')
+    collection.find().toArray((err, news) => {
+      if(err) return console.log(err)
+      res.render('index', {
+        title: 'Homepage',
+        news_list: news
+      })
+    })
   })
 })
 
@@ -136,9 +181,11 @@ app.get('/article', (req, res) => {
 
     if (err) return console.log(err)
 
-    collection.findOne({ id: req.query.id }, (err, oneNews) => {
-      if(err) console.log(err)
-      console.log(oneNews)
+    console.log(req.query.id)
+
+    collection.findOne({ title: req.query.id }, (err, oneNews) => {
+      if (err) console.log(err)
+      // console.log(oneNews)
 
       res.render('article', {
         title: `${oneNews.title}`,
